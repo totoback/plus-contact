@@ -1,9 +1,11 @@
-import React from 'react'
+import { AiOutlineSmile } from "react-icons/ai";
 
 function Footer() {
   return (
-    <div>index</div>
-  )
+    <div className="flex h-20 text-lg justify-center items-center">
+      <AiOutlineSmile />
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

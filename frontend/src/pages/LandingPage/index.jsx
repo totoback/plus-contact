@@ -1,8 +1,7 @@
-import React from 'react'
 
 function LandingPage() {
   return (
-    <div>index</div>
+    <div>LandingPage</div>
   )
 }
 

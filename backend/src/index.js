@@ -7,10 +7,14 @@ const HOST = "0,0,0,0"; // 호스트지정
 
 //app
 const app = express(); //새로운 Express 어플 생성
-app.get("/", (req, res) => { // "/"경로로 요청이 오면 hello World출력
+
+app.get("/", (req, res) => {
+  // "/"경로로 요청이 오면 hello World출력
   res.send("hello world111");
 });
 
-app.listen(PORT, ()=>{
-  console.log(`서버는 ${PORT}번 포트에서 작동중!`)
+app.use(express.static("uploads"));
+
+app.listen(PORT, () => {
+  console.log(`서버는 ${PORT}번 포트에서 작동중!`);
 }); //해당포트와 호스트에서 HTTP 서버를 시작

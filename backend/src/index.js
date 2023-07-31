@@ -23,10 +23,14 @@ mongoose
     console.error(err);
   });
 
-app.get("/", (req, res) => {
-  // "/"경로로 요청이 오면 hello World출력
-  res.send("hello world111");
-});
+app.get('/',(req,res)=>{
+  throw new Error('it is an error')
+})
+
+app.use((error,req,res,next)=>{
+  res.status(err.status || 500)
+  res.send(error.message || '서버에서 에러가 났습니다.')
+})
 
 app.post("/", (req, res) => {
   console.log(req.body);

@@ -23,9 +23,13 @@ mongoose
     console.error(err);
   });
 
-app.get('/',(req,res)=>{
-  throw new Error('it is an error')
-})
+// app.get('/',(req,res)=>{
+//   throw new Error('it is an error')
+// })
+app.get("/", (req, res) => {
+  // "/"경로로 요청이 오면 hello World출력
+  res.send("hello world111");
+});
 
 app.use((error,req,res,next)=>{
   res.status(err.status || 500)

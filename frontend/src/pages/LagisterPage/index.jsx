@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form";
+import { registerUser } from "../../store/thunkFunctions";
+import { useDispatch } from "react-redux";
 
 function LagisterPage() {
   const {
@@ -7,9 +9,23 @@ function LagisterPage() {
     formState: { errors },
     reset,
   } = useForm({ mode: "onChange" });
+
+  const dispatch = useDispatch();
+
   const onSubmit = ({ email, password, name }) => {
+
+    const body = {
+      email,
+      password,
+      name,
+      image: `https://via.placeholder.com/600x400?text=no+user+image`
+    }
+
+    dispatch(registerUser(body));
+
     reset();
-  };
+  }
+
   const userEmail = {
     required: "필수 필드입니다.",
   };
